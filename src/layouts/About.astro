@@ -1,0 +1,23 @@
+---
+import DecodeText from "@components/vue/DecodeText.vue";
+import photo from "@assets/images/personal-photo.jpg";
+
+---
+<div class="hero bg-base-200 min-h-screen">
+    <div class="hero-content flex-col lg:flex-row gap-20 px-20">
+        <img
+            src={photo.src}
+            class="max-w-sm rounded-lg shadow-2xl"
+        />
+        <div>
+            <h1 class="text-5xl font-bold">
+                <DecodeText client:visible text="Hello, I'm Joan!" />
+            </h1>
+            <p class="py-6">
+                Provident cupiditate voluptatem et in. Quaerat fugiat ut
+                assumenda excepturi exercitationem quasi. In deleniti eaque aut
+                repudiandae et a id nisi.
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+@import "https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap";
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+    name: "dark";
+    default: true;
+    --color-primary: oklch(76.5% 0.177 163.223);
+    --color-error: oklch(71.2% 0.194 13.428);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+}
+
+.bg-image {
+    background-image: url("@assets/images/hero-image.webp");
+    background-size: cover;
+    background-position: center;
+}

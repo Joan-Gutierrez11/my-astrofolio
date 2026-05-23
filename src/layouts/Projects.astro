@@ -1,0 +1,79 @@
+---
+import Card from "@components/vue/Card.vue";
+import DecodeText from "@components/vue/DecodeText.vue";
+
+// const { projects } = Astro.props as { projects: Project[] };
+const projects = [
+    {
+        title: "Project 1",
+        description: "Description for project 1",
+        imageUrl: "https://picsum.photos/seed/project1/600/400",
+        link: "https://example.com/project1",
+    },
+    {
+        title: "Project 2",
+        description: "Description for project 2",
+        imageUrl: "https://picsum.photos/seed/project2/600/400",
+        link: "https://example.com/project2",
+    },
+    {
+        title: "Project 3",
+        description: "Description for project 3",
+        imageUrl: "https://picsum.photos/seed/project3/600/400",
+        link: "https://example.com/project3",
+    },
+    {
+        title: "Project 4",
+        description: "Description for project 4",
+        imageUrl: "https://picsum.photos/seed/project4/600/400",
+        link: "https://example.com/project4",
+    },
+    {
+        title: "Project 5",
+        description: "Description for project 5",
+        imageUrl: "https://picsum.photos/seed/project5/600/400",
+        link: "https://example.com/project5",
+    },
+    {
+        title: "Project 6",
+        description: "Description for project 6",
+        imageUrl: "https://picsum.photos/seed/project6/600/400",
+        link: "https://example.com/project6",
+    },
+] as Project[];
+---
+
+<div class="hero bg-base-200 min-h-screen">
+    <div class="hero-content text-center">
+        <div class="max-w-2xl w-full px-4">
+            <h1 class="text-5xl font-bold mb-10">
+                <DecodeText client:visible text="Projects" />
+            </h1>
+            <div>
+                <!-- <Carousel client:visible projects={projects} /> -->
+                <div class="carousel rounded-box w-96">
+                    {
+                        projects.map((project, index) => (
+                            <div id={`slide${index + 1}`} class="carousel-item w-1/2">
+                                <div class="card bg-base-100 w-96 shadow-sm">
+                                    <figure>
+                                        <img src={project.imageUrl} alt={project.title} />
+                                    </figure>
+                                    <div class="card-body">
+                                        <h2 class="card-title">{project.title}</h2>
+                                        <p>{project.description}</p>
+                                        <template v-if="project.link">
+                                            <div class="card-actions justify-end">
+                                                <a href={project.link} target="_blank" class="btn btn-primary">View Project</a>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

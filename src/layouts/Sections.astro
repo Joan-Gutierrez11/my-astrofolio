@@ -1,0 +1,17 @@
+---
+import Navbar from "@components/Navbar.astro";
+
+const props = Astro.props as { sections: Section[] };
+---
+<div class="relative z-10">
+    <Navbar sections={props.sections}/>
+    {
+        props.sections.map((section, i) => (
+            <Fragment key={section.name}>
+                <section id={section.reference.slice(1)}>
+                    <section.component />
+                </section>
+            </Fragment>
+        ))
+    }
+</div>

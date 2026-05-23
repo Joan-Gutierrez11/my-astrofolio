@@ -8,6 +8,23 @@
     "dist"
   ],
   "compilerOptions": {
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+        "@layouts/*": [
+            "./src/layouts/*"
+        ],
+        "@styles/*": [
+            "./src/styles/*"
+        ],
+        "@components/*": [
+            "./src/components/*"
+        ],
+        "@pages/*": [
+            "./src/pages/*"
+        ],
+        "@assets/*": [
+            "./src/assets/*"
+        ]
+    }
   }
 }

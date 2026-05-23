@@ -1,0 +1,21 @@
+---
+const { sections } = Astro.props as { sections: Section[] };
+---
+<div
+    class="navbar justify-center fixed top-0 left-0 right-0 z-50 shadow-sm bg-gray-950/60 backdrop-blur-md border-b border-gray-800 transition-all duration-300"
+>
+    <div class="navbar-center">
+        {
+            sections?.map((section) => (
+                <a
+                    href={section.reference}
+                    class="py-2 px-3 relative text-gray-400 hover:text-emerald-400 transition-all duration-300
+                            after:absolute after:bottom-0.5 after:left-0 after:h-0.5 after:w-0
+                            after:bg-emerald-400 after:transition-all after:duration-300 hover:after:w-full"
+                >
+                    {section.name}
+                </a>
+            ))
+        }
+    </div>
+</div>
