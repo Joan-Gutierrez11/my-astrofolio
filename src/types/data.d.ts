@@ -12,8 +12,4 @@ declare global {
         repoUrl?: string;
         skills?: string[];
     }
-
-    function translateSkill(skill: string): string {
-        return skill;
-    };
 }
