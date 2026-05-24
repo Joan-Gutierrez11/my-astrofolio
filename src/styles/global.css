@@ -23,3 +23,9 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+@media (min-width: 640px) {
+    .bg-image {
+        background-attachment: fixed;
+    }
+}
