@@ -1,0 +1,29 @@
+{
+    "sections": {
+        "home": "Home",
+        "about_me": "About",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "home": {
+        "title": "Joan Gutiérrez",
+        "pretext": "I'am ",
+        "subtitles": "FullStack Developer,Data Engineer"
+    },
+    "about_me": {
+        "title": "Hi, I'm Joan!"
+    },
+    "projects": {
+        "title": "My Projects"
+    },
+    "contact": {
+        "title": "Contact",
+        "has_project": "Do you have a project in mind or want to collaborate? Send me a message.",
+        "send_message": "Send message",
+        "write_me": "Or write to me directly at"
+    },
+    "languages": {
+        "es": "Spanish",
+        "en": "English"
+    }
+}

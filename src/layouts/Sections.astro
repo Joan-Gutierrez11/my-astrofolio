@@ -1,7 +1,7 @@
 ---
 import Navbar from "@components/Navbar.astro";
 
-const props = Astro.props as { sections: Section[] };
+const props = Astro.props as { sections: Section[], locale?: string };
 ---
 <div class="relative z-10">
     <Navbar sections={props.sections}/>

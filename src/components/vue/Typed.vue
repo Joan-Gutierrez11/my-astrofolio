@@ -4,6 +4,7 @@ import Typed from 'typed.js';
 
 const props = defineProps<{
     texts?: string[];
+    pretext: string;
 }>();
 
 // Typed instance
@@ -25,6 +26,7 @@ onUnmounted(() => typed?.destroy());
 <template>
     <p class="text-xl md:text-2xl text-gray-300">
         <span>$</span> 
-        I'm <span id="typed-element" class="text-primary"></span>
+        {{ (props.pretext ?? 'Hola, soy') + ' ' }}
+        <span id="typed-element" class="text-primary"></span>
     </p>
 </template>

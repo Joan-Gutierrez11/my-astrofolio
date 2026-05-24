@@ -1,0 +1,29 @@
+{
+    "sections": {
+        "home": "Inicio",
+        "about_me": "Sobre mí",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+    },
+    "home": {
+        "title": "Joan Gutiérrez",
+        "pretext": "Soy ",
+        "subtitles": "Desarrollador FullStack,Ingeniero de Datos"
+    },
+    "about_me": {
+        "title": "Hola, soy Joan!"
+    },
+    "projects": {
+        "title": "Mis Proyectos"
+    },
+    "contact": {
+        "title": "Contacto",
+        "has_project": "¿Tienes un proyecto en mente o quieres colaborar? Envíame un mensaje.",
+        "send_message": "Enviar mensaje",
+        "write_me": "O escríbeme directamente a"
+    },
+    "languages": {
+        "es": "Español",
+        "en": "Inglés"
+    }
+}

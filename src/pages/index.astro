@@ -1,21 +1,14 @@
 ---
-import Hero from "@layouts/Hero.astro";
-import About from "@layouts/About.astro";
 import Layout from "@layouts/Layout.astro";
 import Sections from "@layouts/Sections.astro";
-import Projects from "@layouts/Projects.astro";
-import Contact from "@layouts/Contact.astro";
+import { sections } from "@utils/sections";
 
-const sections: Section[] = [
-    { name: 'Home', reference: '#home', component: Hero },
-    { name: 'About me', reference: '#about', component: About },
-    { name: 'Projects', reference: '#projects', component: Projects },
-    { name: 'Contact', reference: '#contact', component: Contact },
-];
+const defaultLocale = Astro.currentLocale;
+const { locale } = Astro.props as { locale: string };
 
 ---
-<Layout>
+<Layout locale={locale ?? defaultLocale}>
     <div class="pt-16">
-        <Sections sections={sections} />
+        <Sections sections={sections} locale={locale ?? defaultLocale} />
     </div>
 </Layout>

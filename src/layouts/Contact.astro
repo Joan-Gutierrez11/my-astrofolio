@@ -1,13 +1,19 @@
 ---
+import { useTranslations } from "@utils/i18n";
+
 const formEndpoint = "https://formspree.io/f/YOUR_FORM_ID";
+
+const t = useTranslations(Astro.currentLocale ?? "es");
 ---
-<div class="bg-white text-gray-900 min-h-screen flex flex-col items-center py-16">
+<div class="bg-white text-gray-900 min-h-screen flex flex-col items-center py-32">
     <div class="max-w-4xl mx-auto">
         <div class="space-y-2 mb-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center">Contacto</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center">
+                {t("contact.title")}
+            </h2>
         </div>
         <p class="text-gray-500 text-center mb-12 max-w-lg mx-auto">
-            ¿Tienes un proyecto en mente o quieres colaborar? Envíame un mensaje.
+            {t("contact.has_project")}
         </p>
 
         <form
@@ -68,11 +74,11 @@ const formEndpoint = "https://formspree.io/f/YOUR_FORM_ID";
                 type="submit"
                 class="w-full py-3 px-6 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 active:bg-gray-950 transition-colors"
             >
-                Enviar mensaje
+                {t("contact.send_message")}
             </button>
 
             <p class="text-xs text-center text-gray-400">
-                O escríbeme directamente a
+                {t("contact.write_me")}
                 <a href="mailto:joan@email.com" class="text-emerald-600 hover:text-emerald-700 underline">joan@email.com</a>
             </p>
         </form>

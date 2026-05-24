@@ -1,6 +1,9 @@
 ---
 import Carousel from "@components/vue/Carousel.vue";
 import DecodeText from "@components/vue/DecodeText.vue";
+import { useTranslations } from "@utils/i18n";
+
+const t = useTranslations(Astro.currentLocale ?? 'es');
 
 // const { projects } = Astro.props as { projects: Project[] };
 const projects = [
@@ -46,7 +49,7 @@ const projects = [
 <div class="bg-base-200 min-h-screen flex flex-col items-center py-16">
     <div class="w-full px-4 mt-10">
         <h1 class="text-5xl font-bold mb-10 text-center">
-            <DecodeText client:visible text="My Projects" />
+            <DecodeText client:visible text={t('projects.title')} />
         </h1>
     </div>
     <div class="w-full px-4 mt-10">
