@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const { project } = defineProps<{ project: Project }>();
+const { project, btnText } = defineProps<{ project: Project; btnText?: string }>();
 
 </script>
 <template>
@@ -13,7 +13,7 @@ const { project } = defineProps<{ project: Project }>();
             <p class="mb-5">{{ project.description }}</p>
             <template v-if="project.link">
                 <div class="card-actions justify-end">
-                    <a :href="project.link" target="_blank" class="btn btn-primary">View Project</a>
+                    <a :href="project.link" target="_blank" class="btn btn-primary">{{ btnText || "View Project" }}</a>
                 </div>
             </template>
         </div>

@@ -5,7 +5,10 @@ import Card from "@components/vue/Card.vue";
 import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
 
-const { projects } = defineProps<{ projects: Project[] }>();
+const { projects } = defineProps<{ 
+    projects: Project[],
+    defaultBtnText?: string
+}>();
 
 const breakpoints = {
     320: { slidesPerView: 1, spaceBetween: 20 },
@@ -24,7 +27,7 @@ const breakpoints = {
         loop
     >
         <SwiperSlide v-for="project in projects" :key="project.title">
-            <Card :project="project"/>
+            <Card :project="project" :btnText="defaultBtnText"/>
         </SwiperSlide>
     </Swiper>
 </template>

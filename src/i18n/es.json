@@ -14,7 +14,8 @@
         "title": "Hola, soy Joan!"
     },
     "projects": {
-        "title": "Mis Proyectos"
+        "title": "Mis Proyectos",
+        "view_repository": "Ver repositorio"
     },
     "contact": {
         "title": "Contacto",
