@@ -5,7 +5,7 @@ import Card from "@components/vue/Card.vue";
 import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
 
-const { projects } = defineProps<{ 
+const { projects, defaultBtnText } = defineProps<{ 
     projects: Project[],
     defaultBtnText?: string
 }>();
@@ -22,7 +22,7 @@ const breakpoints = {
         :breakpoints="breakpoints"
         :slidesPerView="1"
         :spaceBetween="20"
-        :autoplay="{ delay: 2000 }"
+        :autoplay="{ delay: 5000 }"
         :pagination="{ clickable: true }"
         loop
     >

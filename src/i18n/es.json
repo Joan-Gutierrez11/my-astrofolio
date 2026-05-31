@@ -21,7 +21,17 @@
         "title": "Contacto",
         "has_project": "¿Tienes un proyecto en mente o quieres colaborar? Envíame un mensaje.",
         "send_message": "Enviar mensaje",
-        "write_me": "O escríbeme directamente a"
+        "write_me": "O escríbeme directamente a",
+        "form": {
+            "name": "Nombre",
+            "email": "Correo electrónico",
+            "message": "Mensaje",
+            "subject": "Asunto",
+            "name_placeholder": "Tu nombre",
+            "email_placeholder": "Tu correo electrónico",
+            "message_placeholder": "Tu mensaje",
+            "subject_placeholder": "El asunto del mensaje"
+        }
     },
     "languages": {
         "es": "Español",

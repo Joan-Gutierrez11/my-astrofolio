@@ -2,12 +2,10 @@
 import { i18n, useTranslations } from "@utils/i18n";
 
 const { sections } = Astro.props as { sections: Section[] };
-
 const t = useTranslations(Astro.currentLocale);
 
-const langLink = (lang: string) => lang === "es" ? "/" : `/${lang}`;
-
-const getSectionName = (name: string) => name.toLowerCase().replace(' ', '_');
+const langLink = (lang: string) => (lang === "es" ? "/" : `/${lang}`);
+const getSectionName = (name: string) => name.toLowerCase().replace(" ", "_");
 ---
 
 <div
@@ -15,9 +13,9 @@ const getSectionName = (name: string) => name.toLowerCase().replace(' ', '_');
 >
     <div class="navbar-start">
         <div class="dropdown">
-            <div 
-                tabindex="0" 
-                role="button" 
+            <div
+                tabindex="0"
+                role="button"
                 class="btn btn-ghost lg:hidden"
                 aria-label="responsive-menu"
             >
@@ -72,9 +70,9 @@ const getSectionName = (name: string) => name.toLowerCase().replace(' ', '_');
     </div>
     <div class="navbar-end">
         <div class="dropdown dropdown-end">
-            <div 
-                tabindex="0" 
-                role="button" 
+            <div
+                tabindex="0"
+                role="button"
                 class="btn btn-ghost"
                 aria-label="language-menu"
             >
@@ -116,6 +114,24 @@ const getSectionName = (name: string) => name.toLowerCase().replace(' ', '_');
                                     />
                                 </svg>
                                 {t(`languages.${lang}`)}
+                                {
+                                    Astro.currentLocale === lang && (
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5"
+                                            />
+                                        </svg>
+                                    )
+                                }
                             </a>
                         </li>
                     ))

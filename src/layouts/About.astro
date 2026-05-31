@@ -13,7 +13,12 @@ import photo from "@assets/images/personal-photo.jpg";
         />
         <div>
             <h1 class="text-5xl font-bold">
-                <DecodeText client:visible text="Hello, I'm Joan!" />
+                <DecodeText 
+                    client:visible 
+                    text="Hello, I'm Joan!"
+                    revealSpeed={2}
+                    frameDelay={50}
+                />
             </h1>
             <p class="py-6">
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut
