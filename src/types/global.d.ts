@@ -21,9 +21,18 @@ declare global {
         skills?: IconName[];
     }
 
+    interface WorkExperience {
+        title: string;
+        place: string;
+        time: string;
+        current: boolean;
+        functions: string[];
+    }
+
     interface Data {
         about: AboutMe;
         projects: Project[];
+        experience: WorkExperience[];
     }
 
 }

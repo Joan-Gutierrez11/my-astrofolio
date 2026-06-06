@@ -8,6 +8,42 @@ export default {
         title: "Acerca de mí",
         description: "Desarrollador Full Stack orientado al desarrollo backend y construcción de soluciones escalables de software. Experiencia desarrollando aplicaciones empresariales, APIs REST y microservicios utilizando Laravel, Vue.js, Django y Google Cloud Platform. Apasionado por la arquitectura de software, la eficiencia de sistemas y el desarrollo de productos robustos, mantenibles y de alto impacto."
     },
+    experience: [
+        {
+            title: "Ayudante de cátedra - Programación",
+            place: "ESCUELA SUPERIOR POLITECNICA DEL LITORAL (ESPOL)",
+            time: "2021 - 2022",
+            current: false,
+            functions: [
+                "Soporte académico en la materia Fundamentos de Programación",
+                "Revisión de tareas y proyectos de programación",
+                "Refuerzo de conceptos de programación y resolución de problemas."
+            ]
+        },
+        {
+            title: "Desarrollador FullStack - Pasante",
+            place: "Hangaroa S.A",
+            time: "2022 - 2023",
+            current: false,
+            functions: [
+                "Desarrollo de panel administrativo web utilizando Django y Vue.js.",
+                "Desarrollo de aplicación móvil híbrida usando Ionic y Angular.",
+                "Implementación de módulos frontend y backend para aplicaciones empresariales."
+            ]
+        },
+        {
+            title: "Desarrollador FullStack",
+            place: "FUNIBER",
+            time: "2024 - Actualidad",
+            current: true,
+            functions: [
+                "Desarrollo de aplicaciones web usando PHP, Laravel y Vue.js.",
+                "Implementación de microservicios y APIs REST usando Laravel y TypeScript.",
+                "Integración y despliegue de aplicaciones en Google Cloud.",
+                "Participación en mejoras de arquitectura y mantenimiento de sistemas empresariales."
+            ]
+        },
+    ],
     projects: [
         {
             title: "Auth REST API for users",
