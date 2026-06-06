@@ -1,61 +1,25 @@
 ---
 import Carousel from "@components/vue/Carousel.vue";
 import DecodeText from "@components/vue/DecodeText.vue";
-import { useTranslations } from "@utils/i18n";
+import { useTranslations, useData } from "@utils/i18n";
 
 const t = useTranslations(Astro.currentLocale ?? 'es');
-
-const projects = [
-    {
-        title: "Project 1",
-        description: "Description for project 1",
-        imageUrl: "https://picsum.photos/seed/project1/600/400",
-        link: "https://example.com/project1",
-    },
-    {
-        title: "Project 2",
-        description: "Description for project 2",
-        imageUrl: "https://picsum.photos/seed/project2/600/400",
-        link: "https://example.com/project2",
-    },
-    {
-        title: "Project 3",
-        description: "Description for project 3",
-        imageUrl: "https://picsum.photos/seed/project3/600/400",
-        link: "https://example.com/project3",
-    },
-    {
-        title: "Project 4",
-        description: "Description for project 4",
-        imageUrl: "https://picsum.photos/seed/project4/600/400",
-        link: "https://example.com/project4",
-    },
-    {
-        title: "Project 5",
-        description: "Description for project 5",
-        imageUrl: "https://picsum.photos/seed/project5/600/400",
-        link: "https://example.com/project5",
-    },
-    {
-        title: "Project 6",
-        description: "Description for project 6",
-        imageUrl: "https://picsum.photos/seed/project6/600/400",
-        link: "https://example.com/project6",
-    },
-] as Project[];
+const { projects } = useData(Astro.currentLocale ?? 'es');
 ---
 
 <div class="bg-base-200 min-h-screen flex flex-col items-center py-16">
     <div class="w-full px-4 mt-10">
         <h1 class="text-5xl font-bold mb-10 text-center">
-            <DecodeText client:visible text={t('projects.title')} />
+            <DecodeText client:visible text={t('messages.projects.title')} />
         </h1>
     </div>
     <div class="w-full px-4 mt-10">
         <Carousel 
             client:visible 
             projects={projects} 
-            defaultBtnText={t('projects.view_repository')} 
+            defaultBtnText={t('messages.projects.view_repository')}
+            nextBtnText={t('messages.projects.next')}
+            prevBtnText={t('messages.projects.prev')}
         />
     </div>
 </div>

@@ -1,7 +1,9 @@
 ---
 import DecodeText from "@components/vue/DecodeText.vue";
 import photo from "@assets/images/personal-photo.jpg";
+import { useData } from "@utils/i18n";
 
+const { about } = useData(Astro.currentLocale ?? "es");
 ---
 <div class="hero bg-base-200 min-h-screen">
     <div class="hero-content flex-col lg:flex-row gap-20 px-20">
@@ -15,15 +17,13 @@ import photo from "@assets/images/personal-photo.jpg";
             <h1 class="text-5xl font-bold">
                 <DecodeText 
                     client:visible 
-                    text="Hello, I'm Joan!"
+                    text={about.title}
                     revealSpeed={2}
                     frameDelay={50}
                 />
             </h1>
             <p class="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
+                {about.description}
             </p>
         </div>
     </div>

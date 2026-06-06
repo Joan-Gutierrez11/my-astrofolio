@@ -15,7 +15,9 @@
     },
     "projects": {
         "title": "Mis Proyectos",
-        "view_repository": "Ver repositorio"
+        "view_repository": "Ver repositorio",
+        "next": "Siguiente",
+        "previous": "Anterior"
     },
     "contact": {
         "title": "Contacto",

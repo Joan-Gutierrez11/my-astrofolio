@@ -9,11 +9,11 @@ const t = useTranslations(Astro.currentLocale ?? "es");
     <div class="max-w-4xl mx-auto">
         <div class="space-y-2 mb-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center">
-                {t("contact.title")}
+                {t("messages.contact.title")}
             </h2>
         </div>
         <p class="text-gray-500 text-center mb-12 max-w-lg mx-auto">
-            {t("contact.has_project")}
+            {t("messages.contact.has_project")}
         </p>
 
         <form
@@ -24,7 +24,7 @@ const t = useTranslations(Astro.currentLocale ?? "es");
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label for="name" class="block text-sm font-medium mb-1.5 text-gray-700">
-                        {t("contact.form.name")}
+                        {t("messages.contact.form.name")}
                     </label>
                     <input
                         type="text"
@@ -35,12 +35,12 @@ const t = useTranslations(Astro.currentLocale ?? "es");
                             focus:outline-none focus:ring-2 focus:ring-emerald-500 
                             focus:border-transparent transition-all bg-white text-gray-900 
                             placeholder:text-gray-400"
-                        placeholder={t("contact.form.name_placeholder")}
+                        placeholder={t("messages.contact.form.name_placeholder")}
                     />
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium mb-1.5 text-gray-700">
-                        {t("contact.form.email")}
+                        {t("messages.contact.form.email")}
                     </label>
                     <input
                         type="email"
@@ -50,14 +50,14 @@ const t = useTranslations(Astro.currentLocale ?? "es");
                         class="w-full px-4 py-3 rounded-lg border border-gray-300 
                             focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent 
                             transition-all bg-white text-gray-900 placeholder:text-gray-400"
-                        placeholder={t("contact.form.email_placeholder")}
+                        placeholder={t("messages.contact.form.email_placeholder")}
                     />
                 </div>
             </div>
 
             <div>
                 <label for="subject" class="block text-sm font-medium mb-1.5 text-gray-700">
-                    {t("contact.form.subject")}
+                    {t("messages.contact.form.subject")}
                 </label>
                 <input
                     type="text"
@@ -67,13 +67,13 @@ const t = useTranslations(Astro.currentLocale ?? "es");
                     class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none 
                         focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all 
                         bg-white text-gray-900 placeholder:text-gray-400"
-                    placeholder={t("contact.form.subject_placeholder")}
+                    placeholder={t("messages.contact.form.subject_placeholder")}
                 />
             </div>
 
             <div>
                 <label for="message" class="block text-sm font-medium mb-1.5 text-gray-700">
-                    {t("contact.form.message")}
+                    {t("messages.contact.form.message")}
                 </label>
                 <textarea
                     name="message"
@@ -83,7 +83,7 @@ const t = useTranslations(Astro.currentLocale ?? "es");
                     class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none 
                         focus:ring-2 focus:ring-emerald-500 focus:border-transparent 
                         transition-all bg-white text-gray-900 placeholder:text-gray-400 resize-none"
-                    placeholder={t("contact.form.message_placeholder")}
+                    placeholder={t("messages.contact.form.message_placeholder")}
                 ></textarea>
             </div>
 
@@ -91,11 +91,11 @@ const t = useTranslations(Astro.currentLocale ?? "es");
                 type="submit"
                 class="w-full py-3 px-6 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 active:bg-gray-950 transition-colors"
             >
-                {t("contact.send_message")}
+                {t("messages.contact.send_message")}
             </button>
 
             <p class="text-xs text-center text-gray-400">
-                {t("contact.write_me")}
+                {t("messages.contact.write_me")}
                 <a href="mailto:joan@email.com" class="text-emerald-600 hover:text-emerald-700 underline">joan@email.com</a>
             </p>
         </form>

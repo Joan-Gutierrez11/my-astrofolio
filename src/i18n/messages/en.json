@@ -15,7 +15,9 @@
     },
     "projects": {
         "title": "My Projects",
-        "view_repository": "View repository"
+        "view_repository": "View repository",
+        "next": "Next",
+        "previous": "Previous"
     },
     "contact": {
         "title": "Contact",
