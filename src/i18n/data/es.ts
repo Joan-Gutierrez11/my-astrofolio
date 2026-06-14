@@ -14,6 +14,7 @@ export default {
             place: "ESCUELA SUPERIOR POLITECNICA DEL LITORAL (ESPOL)",
             time: "2021 - 2022",
             current: false,
+            skills: ["python"],
             functions: [
                 "Soporte académico en la materia Fundamentos de Programación",
                 "Revisión de tareas y proyectos de programación",
@@ -25,6 +26,7 @@ export default {
             place: "Hangaroa S.A",
             time: "2022 - 2023",
             current: false,
+            skills: ["django", "vuejs", "ionic", "angular", "typescript"],
             functions: [
                 "Desarrollo de panel administrativo web utilizando Django y Vue.js.",
                 "Desarrollo de aplicación móvil híbrida usando Ionic y Angular.",
@@ -36,6 +38,7 @@ export default {
             place: "FUNIBER",
             time: "2024 - Actualidad",
             current: true,
+            skills: ["php", "laravel", "vuejs", "typescript", "googlecloud"],
             functions: [
                 "Desarrollo de aplicaciones web usando PHP, Laravel y Vue.js.",
                 "Implementación de microservicios y APIs REST usando Laravel y TypeScript.",

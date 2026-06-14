@@ -21,7 +21,8 @@
         "previous": "Previous"
     },
     "experience": {
-        "title": "Work Experience"
+        "title": "Work Experience",
+        "current": "Current"
     },
     "contact": {
         "title": "Contact",

@@ -27,6 +27,7 @@ declare global {
         time: string;
         current: boolean;
         functions: string[];
+        skills?: IconName[];
     }
 
     interface Data {

@@ -1,9 +1,10 @@
 ---
-import Timeline from "@components/Timeline.astro";
+import Timeline from "@components/vue/Timeline.vue";
 import DecodeText from "@components/vue/DecodeText.vue";
-import { useTranslations } from "@utils/i18n";
+import { useTranslations, useData } from "@utils/i18n";
 
 const t = useTranslations(Astro.currentLocale ?? "es");
+const { experience } = useData(Astro.currentLocale ?? "es");
 ---
 
 <div class="bg-base-200 min-h-screen flex flex-col items-center py-16">
@@ -17,7 +18,11 @@ const t = useTranslations(Astro.currentLocale ?? "es");
             />
         </h1>
     </div>
-    <div class="w-full px-4 mt-10">
-        <Timeline />
+    <div class="w-full px-4 max-w-6xl mt-10">
+        <Timeline 
+            client:visible 
+            experience={experience} 
+            currentLabel={t("messages.experience.current")}
+        />
     </div>
 </div>

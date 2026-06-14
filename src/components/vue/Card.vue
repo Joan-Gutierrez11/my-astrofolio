@@ -10,12 +10,11 @@ function capitalize(str: string) {
 </script>
 <template>
     <div class="card bg-base-100 shadow-sm">
-        <figure>
+        <figure class="h-48 overflow-hidden">
             <img 
                 :src="project.image" 
                 :alt="project.title"
-                width="600"
-                height="400"
+                class="w-full h-full object-cover"
             />
         </figure>
         <div class="card-body">
