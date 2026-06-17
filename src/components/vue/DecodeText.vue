@@ -8,7 +8,7 @@ const { text, revealSpeed = 5, frameDelay = 50 } = defineProps<{
 }>();
 
 const displayText = ref('')
-const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
 let interval: ReturnType<typeof setInterval> | null = null;
 let frame = 0;
@@ -17,19 +17,24 @@ function randomChar(): string {
     return chars[Math.floor(Math.random() * chars.length)];
 }
 
+function randomWord(length: number): string {
+    return Array.from({ length }, () => randomChar()).join('');
+}
+
 onMounted(() => {
-    displayText.value = text.split('').map(() => randomChar()).join('');
+    const words = text.split(' ');
+    displayText.value = words.map(w => randomWord(w.length)).join(' ');
 
     interval = setInterval(() => {
         frame++;
-        const revealed = Math.min(Math.floor(frame / revealSpeed), text.length);
+        const revealed = Math.min(Math.floor(frame / revealSpeed), words.length);
 
-        displayText.value = text.split('').map((char, i) => {
-            if (i < revealed) return char;
-            return randomChar();
-        }).join('');
+        displayText.value = words.map((word, i) => {
+            if (i < revealed) return word;
+            return randomWord(word.length);
+        }).join(' ');
 
-        if (revealed >= text.length && interval) {
+        if (revealed >= words.length && interval) {
             clearInterval(interval);
             interval = null;
         }

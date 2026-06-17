@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { icons } from "@utils/icons";
+import Skill from "./Skill.vue";
 
 const { project, btnText } = defineProps<{ project: Project; btnText?: string }>();
 
@@ -21,14 +21,11 @@ function capitalize(str: string) {
             <h2 class="card-title">{{ project.title }}</h2>
             <p class="mb-5">{{ project.description }}</p>
             <div v-if="project.skills?.length" class="flex flex-wrap gap-2 mb-4">
-                <span
+                <Skill
                     v-for="skill in project.skills"
                     :key="skill"
-                    class="badge badge-soft badge-xl tooltip p-3"
-                    :data-tip="capitalize(skill)"
-                >
-                    <i :class="`${icons[skill].class}`"></i>
-                </span>
+                    :skill="skill"
+                />
             </div>
             <template v-if="project.repoUrl">
                 <div class="card-actions justify-end">

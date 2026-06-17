@@ -32,3 +32,10 @@ export async function readJsonFile(path: string): Promise<object> {
         return Promise.resolve({});
     }
 }
+
+/**
+ * Capitalize the first letter of a given string and return the modified string.
+ */
+export function capitalize(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
