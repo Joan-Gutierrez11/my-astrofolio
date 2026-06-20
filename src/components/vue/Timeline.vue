@@ -7,11 +7,51 @@ const props = defineProps<{
     currentLabel?: string;
 }>();
 
+const itemRefs = ref<(HTMLElement | null)[]>([]);
+const visibleItems = ref<Set<number>>(new Set());
+
+let observer: IntersectionObserver | null = null;
+
+onMounted(() => {
+    observer = new IntersectionObserver(
+        (entries) => {
+            let changed = false;
+            for (const entry of entries) {
+                const index = Number(entry.target.getAttribute('data-index'));
+                if (entry.isIntersecting && !visibleItems.value.has(index)) {
+                    visibleItems.value.add(index);
+                    changed = true;
+                    observer?.unobserve(entry.target);
+                }
+            }
+            if (changed) visibleItems.value = new Set(visibleItems.value);
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    for (const el of itemRefs.value) {
+        if (el) observer.observe(el);
+    }
+});
+
+onBeforeUnmount(() => {
+    observer?.disconnect();
+});
 </script>
 
 <template>
     <ul class="timeline timeline-snap-icon timeline-vertical -ml-48">
-        <li v-for="(exp, index) in experience" :key="index" class="pb-3">
+        <li
+            v-for="(exp, index) in experience"
+            :key="index"
+            :ref="(el: any) => { if (el) itemRefs[index] = el as HTMLElement }"
+            :data-index="index"
+            class="pb-3 transition-all duration-700 ease-out"
+            :class="visibleItems.has(index)
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'"
+            :style="{ transitionDelay: visibleItems.has(index) ? `${index * 120}ms` : '0ms' }"
+        >
             <template v-if="index > 0">
                 <hr />
             </template>

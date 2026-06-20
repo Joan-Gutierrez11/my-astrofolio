@@ -7,13 +7,13 @@ const t = useTranslations(Astro.currentLocale ?? "es");
 const { experience } = useData(Astro.currentLocale ?? "es");
 ---
 
-<div class="bg-base-200 min-h-screen pt-32">
-    <div class="flex flex-col lg:flex-row gap-10 px-20">
+<div id="experience" class="bg-base-200 min-h-screen pt-32">
+    <div class="flex flex-col lg:flex-row gap-10 px-20 h-full">
         <div class="lg:w-1/5 lg:max-w-1/5 sm:text-center lg:text-left">
             <h1 class="text-5xl font-bold">
                 <DecodeText
                     client:visible
-                    text="Experiencia laboral"
+                    text={t("messages.experience.title")}
                     revealSpeed={10}
                     frameDelay={50}
                 />
@@ -28,3 +28,51 @@ const { experience } = useData(Astro.currentLocale ?? "es");
         </div>
     </div>
 </div>
+
+<script type="module">
+if (typeof window !== 'undefined') {
+    const section = document.getElementById('experience');
+    if (section) {
+        const timeline = section.querySelector('.timeline-scroll');
+        if (timeline) {
+            section.addEventListener('wheel', (e) => {
+                const deltaY = e.deltaY;
+                if (Math.abs(deltaY) === 0) return;
+
+                const atTop = timeline.scrollTop <= 0;
+                const atBottom = Math.ceil(timeline.scrollTop + timeline.clientHeight) >= timeline.scrollHeight;
+
+                // If trying to scroll past the edges, allow page to handle it
+                if ((deltaY < 0 && atTop) || (deltaY > 0 && atBottom)) {
+                    return; // don't preventDefault -> page will scroll
+                }
+
+                e.preventDefault();
+                timeline.scrollBy({ top: deltaY, left: 0, behavior: 'auto' });
+            }, { passive: false });
+
+            let startY = null;
+            section.addEventListener('touchstart', (ev) => {
+                if (ev.touches && ev.touches.length) startY = ev.touches[0].clientY;
+            }, { passive: true });
+
+            section.addEventListener('touchmove', (ev) => {
+                if (!startY || !(ev.touches && ev.touches.length)) return;
+                const y = ev.touches[0].clientY;
+                const delta = startY - y; // positive -> swipe up -> scroll down
+                startY = y;
+
+                const atTop = timeline.scrollTop <= 0;
+                const atBottom = Math.ceil(timeline.scrollTop + timeline.clientHeight) >= timeline.scrollHeight;
+
+                if ((delta < 0 && atTop) || (delta > 0 && atBottom)) {
+                    return; // let page handle
+                }
+
+                ev.preventDefault();
+                timeline.scrollBy({ top: delta, left: 0, behavior: 'auto' });
+            }, { passive: false });
+        }
+    }
+}
+</script>
