@@ -3,10 +3,6 @@ import Skill from "./Skill.vue";
 
 const { project, btnText } = defineProps<{ project: Project; btnText?: string }>();
 
-function capitalize(str: string) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
 </script>
 <template>
     <div class="card bg-base-100 shadow-sm">
@@ -18,7 +14,7 @@ function capitalize(str: string) {
             />
         </figure>
         <div class="card-body">
-            <h2 class="card-title">{{ project.title }}</h2>
+            <h3 class="card-title">{{ project.title }}</h3>
             <p class="mb-5">{{ project.description }}</p>
             <div v-if="project.skills?.length" class="flex flex-wrap gap-2 mb-4">
                 <Skill

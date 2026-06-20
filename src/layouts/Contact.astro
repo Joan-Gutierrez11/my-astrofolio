@@ -96,7 +96,11 @@ const t = useTranslations(Astro.currentLocale ?? "es");
 
             <p class="text-xs text-center text-gray-400">
                 {t("messages.contact.write_me")}
-                <a href="mailto:joan@email.com" class="text-emerald-600 hover:text-emerald-700 underline">joan@email.com</a>
+                <a 
+                    href={`mailto:${t("messages.contact.email")}`}
+                    class="text-emerald-600 hover:text-emerald-700 underline">
+                    {t("messages.contact.email")}
+                </a>
             </p>
         </form>
     </div>

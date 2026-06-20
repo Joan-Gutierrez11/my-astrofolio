@@ -29,6 +29,7 @@
         "has_project": "Do you have a project in mind or want to collaborate? Send me a message.",
         "send_message": "Send message",
         "write_me": "Or write to me directly at",
+        "email": "joan.gutierrez@example.com",
         "form": {
             "name": "Name",
             "email": "Email",
