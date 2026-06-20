@@ -49,29 +49,29 @@ export default {
     ],
     projects: [
         {
-            title: "Auth REST API for users",
-            description: "Backend REST API for auth users, using JWT and refresh tokens.",
+            title: "API REST de Autenticación de Usuarios",
+            description: "API REST de backend para autenticación de usuarios, usando JWT y tokens de refresco.",
             repoUrl: "https://github.com/Joan-Gutierrez11/Sistema-de-Autenticacion-de-Usuarios.git",
             image: one.src,
             skills: ["python", "fastapi", "mysql"]
         },
         {
-            title: "Music App",
-            description: "Fullstack Application. Backend made in Express JS and Frontend in Angular 14",
+            title: "Aplicación de Música",
+            description: "Aplicación Fullstack. Backend en Express.js y frontend en Angular 14.",
             image: two.src,
             repoUrl: "https://github.com/Joan-Gutierrez11/PROYECTOS-DAWN/tree/master/Proyecto%203",
             skills: ["nodejs", "angular", "firebase", "javascript", "mysql"]
         },
         {
-            title: "Student Rest API",
-            description: "This project is a REST API for managing student records, built using Spring Boot.",
+            title: "API REST de Estudiantes",
+            description: "API REST para gestionar registros estudiantiles, construida con Spring Boot.",
             image: three.src,
             repoUrl: "https://github.com/Joan-Gutierrez11/Simple-Student-REST-Service.git",
             skills: ["java", "spring", "mysql"]
         },
         {
-            title: "Cars Rest API",
-            description: "This project is a REST API for managing car records, built using C#.",
+            title: "API REST de Vehículos",
+            description: "API REST para gestionar registros de automóviles, desarrollada en C#.",
             image: four.src,
             repoUrl: "https://github.com/Joan-Gutierrez11/Cars-API-.NET",
             skills: ["csharp", "dot-net", "mysql"]
