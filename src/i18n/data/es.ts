@@ -4,6 +4,10 @@ import three from "@assets/images/projects/3.jpg";
 import four from "@assets/images/projects/4.jpg";
 
 export default {
+    skills: {
+        backend: ["python", "fastapi", "nodejs", "java", "spring", "csharp", "dot-net", "mysql"],
+        frontend: ["angular", "javascript", "firebase"]
+    },
     about: {
         title: "Acerca de mí",
         description: "Desarrollador Full Stack orientado al desarrollo backend y construcción de soluciones escalables de software. Experiencia desarrollando aplicaciones empresariales, APIs REST y microservicios utilizando Laravel, Vue.js, Django y Google Cloud Platform. Apasionado por la arquitectura de software, la eficiencia de sistemas y el desarrollo de productos robustos, mantenibles y de alto impacto."

@@ -15,7 +15,9 @@ const { project, btnText } = defineProps<{ project: Project; btnText?: string }>
         </figure>
         <div class="card-body">
             <h3 class="card-title">{{ project.title }}</h3>
-            <p class="mb-5">{{ project.description }}</p>
+            <p class="mb-5">
+                {{ project.description }}
+            </p>
             <div v-if="project.skills?.length" class="flex flex-wrap gap-2 mb-4">
                 <Skill
                     v-for="skill in project.skills"

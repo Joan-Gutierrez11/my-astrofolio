@@ -30,10 +30,16 @@ declare global {
         skills?: IconName[];
     }
 
+    interface Skills {
+        backend: string[];
+        frontend: string[];
+    }
+
     interface Data {
         about: AboutMe;
         projects: Project[];
         experience: WorkExperience[];
+        skills: Skills;
     }
 
 }

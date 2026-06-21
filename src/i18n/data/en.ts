@@ -4,6 +4,10 @@ import three from "@assets/images/projects/3.jpg";
 import four from "@assets/images/projects/4.jpg";
 
 export default {
+    skills: {
+        backend: ["python", "fastapi", "nodejs", "java", "spring", "csharp", "dot-net", "mysql"],
+        frontend: ["angular", "javascript", "firebase"]
+    },
     about: {
         title: "About Me",
         description: "Full Stack Developer focused on backend development and building scalable software solutions. Experience developing enterprise applications, REST APIs, and microservices using Laravel, Vue.js, Django, and Google Cloud Platform. Passionate about software architecture, system efficiency, and creating robust, maintainable products with high impact."

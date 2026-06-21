@@ -4,7 +4,8 @@
         "about_me": "Sobre mí",
         "experience": "Exp. Laboral",
         "projects": "Proyectos",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "skills": "Habilidades"
     },
     "home": {
         "title": "Joan Gutiérrez",
@@ -13,6 +14,11 @@
     },
     "about_me": {
         "title": "Hola, soy Joan!"
+    },
+    "skills": {
+        "title": "Habilidades",
+        "backend": "Backend",
+        "frontend": "Frontend"
     },
     "projects": {
         "title": "Mis Proyectos",

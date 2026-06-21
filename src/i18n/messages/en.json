@@ -4,7 +4,8 @@
         "about_me": "About",
         "experience": "Work Exp.",
         "projects": "Projects",
-        "contact": "Contact"
+        "contact": "Contact",
+        "skills": "Skills"
     },
     "home": {
         "title": "Joan Gutiérrez",
@@ -14,11 +15,16 @@
     "about_me": {
         "title": "Hi, I'm Joan!"
     },
+    "skills": {
+        "title": "Skills",
+        "backend": "Backend",
+        "frontend": "Frontend"
+    },
     "projects": {
         "title": "My Projects",
         "view_repository": "View repository",
         "next": "Next",
-        "previous": "Previous"
+        "prev": "Previous"
     },
     "experience": {
         "title": "Work Experience",

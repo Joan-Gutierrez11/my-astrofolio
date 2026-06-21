@@ -24,7 +24,7 @@ onMounted(() => {
 onUnmounted(() => typed?.destroy());
 </script>
 <template>
-    <p class="text-xl md:text-2xl text-gray-300">
+    <p class="text-xl text-gray-300">
         <span>$</span> 
         {{ (props.pretext ?? 'Hola, soy') + ' ' }}
         <span id="typed-element" class="text-primary"></span>
