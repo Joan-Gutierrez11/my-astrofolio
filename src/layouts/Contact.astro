@@ -2,6 +2,7 @@
 import { useTranslations } from "@utils/i18n";
 
 const formEndpoint = "https://formspree.io/f/YOUR_FORM_ID";
+const email = import.meta.env.PUBLIC_CONTACT_EMAIL;
 
 const t = useTranslations(Astro.currentLocale ?? "es");
 ---
@@ -97,9 +98,9 @@ const t = useTranslations(Astro.currentLocale ?? "es");
             <p class="text-xs text-center text-gray-400">
                 {t("messages.contact.write_me")}
                 <a 
-                    href={`mailto:${t("messages.contact.email")}`}
+                    href={`mailto:${email}`}
                     class="text-emerald-600 hover:text-emerald-700 underline">
-                    {t("messages.contact.email")}
+                    {email}
                 </a>
             </p>
         </form>
