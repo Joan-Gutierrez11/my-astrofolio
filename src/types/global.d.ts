@@ -1,4 +1,5 @@
-import type { IconName } from "@utils/icons";
+// Not export anything to ensure this file is treated as a module and doesn't pollute the global scope.
+export {};
 
 declare global {
     interface Section {
@@ -18,7 +19,7 @@ declare global {
         description: string;
         repoUrl: string;
         image?: string;
-        skills?: IconName[];
+        skills?: string[];
     }
 
     interface WorkExperience {
@@ -27,7 +28,7 @@ declare global {
         time: string;
         current: boolean;
         functions: string[];
-        skills?: IconName[];
+        skills?: string[];
     }
 
     interface Skills {
