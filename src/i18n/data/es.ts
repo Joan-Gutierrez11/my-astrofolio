@@ -5,8 +5,8 @@ import four from "@assets/images/projects/4.jpg";
 
 export default {
     skills: {
-        backend: ["python", "fastapi", "nodejs", "java", "spring", "csharp", "dot-net", "mysql"],
-        frontend: ["angular", "javascript", "firebase"]
+        backend: ["python", "fastapi", "nodejs", "java", "spring", "csharp", "dot-net", "mysql", "django", "laravel", "php"],
+        frontend: ["angular", "javascript", "firebase", "vuejs", "typescript", "react", "nextjs"],
     },
     about: {
         title: "Acerca de mí",
