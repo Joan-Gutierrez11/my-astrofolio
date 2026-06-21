@@ -3,6 +3,8 @@ import vue from '@astrojs/vue';
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+    site: 'https://Joan-Gutierrez11.github.io',
+    base: '/my-astrofolio',
     integrations: [vue()],
     vite: {
         plugins: [tailwindcss()]

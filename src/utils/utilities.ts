@@ -39,3 +39,10 @@ export async function readJsonFile(path: string): Promise<object> {
 export function capitalize(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+/**
+ * Get the full URL for a given path by prepending the PUBLIC_SITE_URL environment variable.
+ */
+export function myUrl(path: string): string {
+    return `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path}`;
+}

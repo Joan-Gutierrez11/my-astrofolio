@@ -1,10 +1,11 @@
 ---
 import { i18n, useTranslations } from "@utils/i18n";
+import { myUrl } from "@utils/utilities";
 
 const { sections } = Astro.props as { sections: Section[] };
 const t = useTranslations(Astro.currentLocale);
 
-const langLink = (lang: string) => (lang === "es" ? "/" : `/${lang}`);
+const langLink = (lang: string) => (lang === "es" ? myUrl("") : myUrl(lang));
 const getSectionName = (name: string) => name.toLowerCase().replace(" ", "_");
 ---
 
