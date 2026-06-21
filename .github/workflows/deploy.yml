@@ -22,7 +22,7 @@ jobs:
         with:
             package-manager: pnpm@10.18.2
         env:
-          PUBLIC_CONTACT_EMAIL: ${{ vars.PUBLIC_CONTACT_EMAIL }}
+          PUBLIC_CONTACT_EMAIL: ${{ secrets.PUBLIC_CONTACT_EMAIL }}
 
   deploy:
     needs: build
