@@ -24,6 +24,8 @@ jobs:
             package-manager: pnpm@10.18.2
         env:
           PUBLIC_CONTACT_EMAIL: ${{ secrets.PUBLIC_CONTACT_EMAIL }}
+          BASE_WEB: ${{ secrets.BASE_WEB }}
+          BASE_SITE: ${{ secrets.BASE_SITE }}
 
   deploy:
     needs: build
