@@ -20,7 +20,7 @@ const { projects } = useData(Astro.currentLocale ?? 'es');
     </div>
     <div class="w-full px-4 mt-10">
         <Carousel 
-            client:visible 
+            client:load 
             projects={projects} 
             defaultBtnText={t('messages.projects.view_repository')}
             nextBtnText={t('messages.projects.next')}
