@@ -13,7 +13,8 @@
         "subtitles": "FullStack Developer,Data Engineer"
     },
     "about_me": {
-        "title": "Hi, I'm Joan!"
+        "title": "Hi, I'm Joan!",
+        "download_cv": "Download CV"
     },
     "skills": {
         "title": "Skills",

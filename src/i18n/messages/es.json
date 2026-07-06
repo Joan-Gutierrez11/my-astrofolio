@@ -13,7 +13,8 @@
         "subtitles": "Desarrollador FullStack,Ingeniero de Datos"
     },
     "about_me": {
-        "title": "Hola, soy Joan!"
+        "title": "Hola, soy Joan!",
+        "download_cv": "Descargar CV"
     },
     "skills": {
         "title": "Habilidades",

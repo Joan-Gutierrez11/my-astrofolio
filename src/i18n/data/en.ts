@@ -10,7 +10,7 @@ export default {
     },
     about: {
         title: "About Me",
-        description: "Full Stack Developer focused on backend development and building scalable software solutions. Experience developing enterprise applications, REST APIs, and microservices using Laravel, Vue.js, Django, and Google Cloud Platform. Passionate about software architecture, system efficiency, and creating robust, maintainable products with high impact."
+        description: "Full Stack Developer focused on backend development and building scalable software solutions. Experience developing enterprise applications, REST APIs, and microservices using Laravel, Vue.js, Django, and Google Cloud Platform. Passionate about software architecture, system efficiency, and creating robust, maintainable products with high impact.",
     },
     experience: [
         {

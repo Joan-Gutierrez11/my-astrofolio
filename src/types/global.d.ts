@@ -11,6 +11,8 @@ declare global {
     interface AboutMe {
         title: string;
         description: string;
+        cvUrl: string;
+        cvLabel: string;
         imageUrl?: string;
     }
 
