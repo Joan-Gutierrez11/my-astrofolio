@@ -24,6 +24,7 @@ jobs:
             package-manager: pnpm@10.18.2
         env:
           PUBLIC_CONTACT_EMAIL: ${{ secrets.PUBLIC_CONTACT_EMAIL }}
+          CV_DOWNLOAD_URL: ${{ secrets.CV_DOWNLOAD_URL }}
 
   deploy:
     needs: build
