@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/vue": "^6.0.1",
+    "@fontsource/fira-code": "^5.2.7",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.5",
     "daisyui": "^5.5.20",
