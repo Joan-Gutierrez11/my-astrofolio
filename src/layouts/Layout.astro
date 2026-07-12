@@ -1,15 +1,16 @@
 ---
 import "@styles/global.css";
-import { myUrl } from "@utils/utilities";
+import { myUrl, UtilityURL } from "@utils/utilities";
 
+UtilityURL.getInstance().setBaseUrl(Astro.url); // Set the base URL for the UtilityURL singleton to the current Astro URL
 const { locale, title = "My Astro Portfolio" } = Astro.props as { locale: string, title?: string };
 ---
 
 <html lang={locale}>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href={myUrl("/favicon.svg")} />
-		<link rel="icon" href={myUrl("/favicon.ico")} />
+		<link rel="icon" type="image/svg+xml" href={myUrl("favicon.svg")} />
+		<link rel="icon" href={myUrl("favicon.ico")} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>

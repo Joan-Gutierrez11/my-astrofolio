@@ -47,7 +47,7 @@ export type TranslationKeys = Paths<typeof i18n[Langs]>;
  * If the key doesn't exist in the specified language, it will fall back to the default language.
  */
 export function useTranslations(lang?: Langs|string) {
-    return function (key: TranslationKeys): string {
+    return function (key: TranslationKeys|string): string {
         const messages = i18n[(lang as Langs)] || i18n[defaultLang];
         return getNestedProperty(messages, key) ?? "";
     };
