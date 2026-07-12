@@ -1,5 +1,3 @@
-import fs from 'node:fs/promises';
-
 /**
  * Utility function to safely access nested properties in an object 
  * using a dot-separated path.
@@ -16,24 +14,6 @@ export function getNestedProperty(obj: any, path: string): any {
 }
 
 /**
- * Read a JSON file from the given path on project and return its contents as an object.
- * If the file doesn't exist or there's an error reading it, 
- * it will return an empty object.
- */
-export async function readJsonFile(path: string): Promise<object> {
-    const filePath = process.cwd() + '/src/' + path;
-    let file;
-    
-    try {
-        file = await fs.readFile(filePath, 'utf8');
-        return JSON.parse(file);
-    } catch (error) {
-        console.error(`Error reading JSON file: ${error}`);
-        return Promise.resolve({});
-    }
-}
-
-/**
  * Capitalize the first letter of a given string and return the modified string.
  */
 export function capitalize(str: string): string {
@@ -44,5 +24,26 @@ export function capitalize(str: string): string {
  * Get the full URL for a given path by prepending the PUBLIC_SITE_URL environment variable.
  */
 export function myUrl(path: string): string {
-    return `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path}`;
+    const baseUrl = import.meta.env.DEV 
+        ? (import.meta.env.PUBLIC_DEV_BASE_URL || '')
+        : import.meta.env.BASE_URL;
+    return `${baseUrl.replace(/\/$/, '')}/${path}`;
+}
+
+/**
+ * Fetch data from a given URL. 
+ * If the `local` parameter is true, it will prepend the base URL to the path.
+ */
+export async function fetchData(url: string, local: boolean = true): Promise<any> {
+    return fetch(local ? myUrl(url) : url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            return null; // or handle the error as needed
+        });
 }

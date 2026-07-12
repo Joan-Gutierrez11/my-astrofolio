@@ -1,10 +1,12 @@
 ---
 import Carousel from "@components/vue/Carousel.vue";
 import DecodeText from "@components/vue/DecodeText.vue";
-import { useTranslations, useData } from "@utils/i18n";
+import { useTranslations } from "@utils/i18n";
+import { fetchData } from "@utils/utilities";
 
-const t = useTranslations(Astro.currentLocale ?? 'es');
-const { projects } = useData(Astro.currentLocale ?? 'es');
+const lang = Astro.currentLocale ?? 'es';
+const t = useTranslations(lang);
+const { projects }: { projects: Project[] } = await fetchData(`api/resume.${lang}.json`) ?? {};
 ---
 
 <div class="bg-base-200 min-h-screen flex flex-col items-center py-16">

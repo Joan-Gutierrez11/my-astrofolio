@@ -1,4 +1,7 @@
-import { getNestedProperty, readJsonFile } from "@utils/utilities";
+import { getNestedProperty } from "@utils/utilities";
+
+import esMessages from '@i18n/messages/es.json';
+import enMessages from '@i18n/messages/en.json';
 
 /**
  * Default language to fall back to if the requested language file doesn't exist.
@@ -6,43 +9,46 @@ import { getNestedProperty, readJsonFile } from "@utils/utilities";
 const defaultLang = 'es';
 
 /**
- * Load the messages for the given language. 
- * If the language file doesn't exist, it will return an empty object.
+ * Type that represents paths to all nested properties in an object, using dot notation.
  */
-async function readLocationFile(lang: string = 'es', folder: string = 'messages'): Promise<Record<string, any>> {
-    return readJsonFile(`i18n/${folder}/${lang}.json`);
-}
+type Paths<T, Prefix extends string = ''> = T extends object
+  ? {
+        [K in keyof T & string]: T[K] extends object 
+            ? Paths<T[K], `${Prefix}${K}.`>
+            : `${Prefix}${K}`;
+    }[keyof T & string]
+  : never;
 
 /**
  * An object that holds the translations for each supported language.
  */
 export const i18n = {
     es: {
-        messages: await readLocationFile('es'),
+        messages: esMessages,
     },
     en: {
-        messages: await readLocationFile('en'),
+        messages: enMessages,
     }
 }
 
-const dataFiles = import.meta.glob('@i18n/data/*.ts', { eager: true });
+/**
+ * Type that represents all available languages in the i18n object.
+ */
+export type Langs = keyof typeof i18n;
+
+/**
+ * Type that represents the structure of the data files for each language.
+ */
+export type TranslationKeys = Paths<typeof i18n[Langs]>;
 
 /**
  * A function that returns a translation function for the specified language.
  * The translation function takes a key and returns the corresponding translation.
  * If the key doesn't exist in the specified language, it will fall back to the default language.
  */
-export function useTranslations(lang?: string) {
-    return function (key: string): string {
-        const messages = i18n[(lang as keyof typeof i18n)] || i18n[defaultLang];
+export function useTranslations(lang?: Langs|string) {
+    return function (key: TranslationKeys): string {
+        const messages = i18n[(lang as Langs)] || i18n[defaultLang];
         return getNestedProperty(messages, key) ?? "";
     };
-}
-
-/**
- * 
- */
-export function useData(lang?: string): Data {
-    const key = `/src/i18n/data/${lang ?? defaultLang}.ts`;
-    return (dataFiles[key] as any)?.default as Data;
 }
