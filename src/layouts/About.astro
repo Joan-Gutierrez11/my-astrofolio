@@ -1,10 +1,13 @@
 ---
 import DecodeText from "@components/vue/DecodeText.vue";
 import photo from "@assets/images/personal-photo.jpg";
-import { useData, useTranslations } from "@utils/i18n";
+import { useTranslations } from "@utils/i18n";
+import { fetchData } from "@utils/utilities";
 
-const t = useTranslations(Astro.currentLocale ?? "es");
-const { about } = useData(Astro.currentLocale ?? "es");
+const lang = Astro.currentLocale ?? "es";
+const t = useTranslations(lang);
+
+const { about }: { about: AboutMe } = await fetchData(`api/resume.${lang}.json`) ?? {};
 const cvDownloadUrl = import.meta.env.CV_DOWNLOAD_URL ?? '#';
 ---
 <div class="hero bg-base-200 min-h-screen">

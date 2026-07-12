@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { myUrl } from "@utils/utilities.ts";
 import Skill from "./Skill.vue";
 
 const { project, btnText } = defineProps<{ project: Project; btnText?: string }>();
@@ -8,7 +9,7 @@ const { project, btnText } = defineProps<{ project: Project; btnText?: string }>
     <div class="card bg-base-100 shadow-sm">
         <figure class="h-48 overflow-hidden">
             <img 
-                :src="project.image" 
+                :src="myUrl(`images/${project.image}`)" 
                 :alt="project.title"
                 class="w-full h-full object-cover"
             />

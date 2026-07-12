@@ -1,10 +1,11 @@
 ---
 import DecodeText from "@components/vue/DecodeText.vue";
-import { useData, useTranslations } from "@utils/i18n";
-import { capitalize } from "@utils/utilities";
+import { useTranslations } from "@utils/i18n";
+import { capitalize, fetchData } from "@utils/utilities";
 
-const t = useTranslations(Astro.currentLocale ?? "es");
-const { skills } = useData(Astro.currentLocale ?? "es");
+const lang = Astro.currentLocale ?? "es";
+const t = useTranslations(lang);
+const { skills }: { skills: Skills } = await fetchData(`api/resume.${lang}.json`) ?? {};
 
 const categories = [
     { key: 'backend', label: t('messages.skills.backend') },

@@ -4,6 +4,11 @@ import esMessages from '@i18n/messages/es.json';
 import enMessages from '@i18n/messages/en.json';
 
 /**
+ * Default language to fall back to if the requested language file doesn't exist.
+ */
+const defaultLang = 'es';
+
+/**
  * Type that represents paths to all nested properties in an object, using dot notation.
  */
 type Paths<T, Prefix extends string = ''> = T extends object
@@ -46,19 +51,4 @@ export function useTranslations(lang?: Langs|string) {
         const messages = i18n[(lang as Langs)] || i18n[defaultLang];
         return getNestedProperty(messages, key) ?? "";
     };
-}
-
-/**
- * Default language to fall back to if the requested language file doesn't exist.
- */
-const defaultLang = 'es';
-
-const dataFiles = import.meta.glob('@i18n/data/*.ts', { eager: true });
-
-/**
- * 
- */
-export function useData(lang?: string): Data {
-    const key = `/src/i18n/data/${lang ?? defaultLang}.ts`;
-    return (dataFiles[key] as any)?.default as Data;
 }

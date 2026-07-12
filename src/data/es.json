@@ -1,0 +1,79 @@
+{
+    "skills": {
+        "backend": ["python", "fastapi", "nodejs", "java", "spring", "csharp", "dot-net", "mysql", "django", "laravel", "php"],
+        "frontend": ["angular", "javascript", "firebase", "vuejs", "typescript", "react", "nextjs"]
+    },
+    "about": {
+        "title": "Acerca de mí",
+        "description": "Desarrollador Full Stack orientado al desarrollo backend y construcción de soluciones escalables de software. Experiencia desarrollando aplicaciones empresariales, APIs REST y microservicios utilizando Laravel, Vue.js, Django y Google Cloud Platform. Apasionado por la arquitectura de software, la eficiencia de sistemas y el desarrollo de productos robustos, mantenibles y de alto impacto."
+    },
+    "experience": [
+        {
+            "title": "Ayudante de cátedra - Programación",
+            "place": "ESCUELA SUPERIOR POLITECNICA DEL LITORAL (ESPOL)",
+            "time": "2021 - 2022",
+            "current": false,
+            "skills": ["python"],
+            "functions": [
+                "Soporte académico en la materia Fundamentos de Programación",
+                "Revisión de tareas y proyectos de programación",
+                "Refuerzo de conceptos de programación y resolución de problemas."
+            ]
+        },
+        {
+            "title": "Desarrollador FullStack - Pasante",
+            "place": "Hangaroa S.A",
+            "time": "2022 - 2023",
+            "current": false,
+            "skills": ["django", "vuejs", "ionic", "angular", "typescript"],
+            "functions": [
+                "Desarrollo de panel administrativo web utilizando Django y Vue.js.",
+                "Desarrollo de aplicación móvil híbrida usando Ionic y Angular.",
+                "Implementación de módulos frontend y backend para aplicaciones empresariales."
+            ]
+        },
+        {
+            "title": "Desarrollador FullStack",
+            "place": "FUNIBER",
+            "time": "2024 - Actualidad",
+            "current": true,
+            "skills": ["php", "laravel", "vuejs", "typescript", "googlecloud"],
+            "functions": [
+                "Desarrollo de aplicaciones web usando PHP, Laravel y Vue.js.",
+                "Implementación de microservicios y APIs REST usando Laravel y TypeScript.",
+                "Integración y despliegue de aplicaciones en Google Cloud.",
+                "Participación en mejoras de arquitectura y mantenimiento de sistemas empresariales."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "API REST de Autenticación de Usuarios",
+            "description": "API REST de backend para autenticación de usuarios, usando JWT y tokens de refresco.",
+            "repoUrl": "https://github.com/Joan-Gutierrez11/Sistema-de-Autenticacion-de-Usuarios.git",
+            "image": "authentication.jpg",
+            "skills": ["python", "fastapi", "mysql"]
+        },
+        {
+            "title": "Aplicación de Música",
+            "description": "Aplicación Fullstack. Backend en Express.js y frontend en Angular 14.",
+            "image": "music-app.jpg",
+            "repoUrl": "https://github.com/Joan-Gutierrez11/PROYECTOS-DAWN/tree/master/Proyecto%203",
+            "skills": ["nodejs", "angular", "firebase", "javascript", "mysql"]
+        },
+        {
+            "title": "API REST de Estudiantes",
+            "description": "API REST para gestionar registros estudiantiles, construida con Spring Boot.",
+            "image": "students-api.jpg",
+            "repoUrl": "https://github.com/Joan-Gutierrez11/Simple-Student-REST-Service.git",
+            "skills": ["java", "spring", "mysql"]
+        },
+        {
+            "title": "API REST de Vehículos",
+            "description": "API REST para gestionar registros de automóviles, desarrollada en C#.",
+            "image": "cars-api.jpg",
+            "repoUrl": "https://github.com/Joan-Gutierrez11/Cars-API-.NET",
+            "skills": ["csharp", "dot-net", "mysql"]
+        }
+    ]
+}
